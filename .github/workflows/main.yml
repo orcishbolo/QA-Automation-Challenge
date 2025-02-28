@@ -14,7 +14,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npm start # Replace with your start command if different
+          run: npm start # Replace with your start command if different
           browser: chrome # Or edge, firefox, electron
           cucumber: |
             {
