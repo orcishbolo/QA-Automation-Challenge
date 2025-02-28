@@ -32,15 +32,15 @@ class LoginPage {
         cy.get(".inventory_item_img img").then(($images) => {
             // Get the source of the first image.
             if ($images.length > 0) {
-              const firstImageSrc = $images[0].src;
+              const firstImageSrc = $images[0].src
         
               // Check if all other images have the same source.
               $images.each((index, img) => {
-                expect(img.src).to.equal(firstImageSrc);
-              });
+                expect(img.src).to.equal(firstImageSrc)
+              })
             } else {
               // Handle the case where there are no images.
-              cy.log("No product images found.");
+              cy.log("No product images found.")
               expect(true).to.equal(true); //Or expect(false).to.equal(true) if you want to fail if no images are found.
             }
           })
