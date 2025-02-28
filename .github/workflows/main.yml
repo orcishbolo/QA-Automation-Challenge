@@ -1,6 +1,7 @@
-name: Cypress Tests
+name: Run Cypress Tests
 
-on: push
+on:
+  push:
 
 jobs:
   cypress-run:
@@ -8,8 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Install Dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
