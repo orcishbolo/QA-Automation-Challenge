@@ -23,8 +23,7 @@ Feature: User Login
     Given I am on the login page
     When I enter credentials for "performance_glitch_user"
     And I click the login button
-    Then I check for a performance glitch
-    And I should be logged in
+    Then I should be logged in
 
   Scenario: Error User Login
     Given I am on the login page

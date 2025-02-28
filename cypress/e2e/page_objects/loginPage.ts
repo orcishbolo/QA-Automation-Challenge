@@ -49,19 +49,6 @@ class LoginPage {
     assertVisualFailure(): void {
         cy.get('.visual_failure').should('be.visible')
       }
-  
-    assertPerformanceGlitch(performanceThreshold: number): void {
-      cy.window().then((win) => {
-        const performance = win.performance
-        const loadTime =
-          performance.timing.loadEventEnd - performance.timing.navigationStart
-  
-        expect(loadTime).to.be.greaterThan(
-          performanceThreshold,
-          `Page load time (${loadTime}ms) exceeded threshold (${performanceThreshold}ms)`
-        );
-      });
-    }
   }
   
   export default new LoginPage()

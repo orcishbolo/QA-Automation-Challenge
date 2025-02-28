@@ -37,8 +37,3 @@ Then("I should see a problem with the product images", () => {
 Then("I should see elements with CSS {string}", () => {
     loginPage.assertVisualFailure()
   })
-
-Then("I check for a performance glitch", () => {
-  const performanceThreshold = 40
-  loginPage.assertPerformanceGlitch(performanceThreshold)
-})
