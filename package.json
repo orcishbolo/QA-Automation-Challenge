@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/e2e/features/login.feature --reporter cypress-multi-reporters --reporter-options configFile=cypress.config.ts"
+    "run:scripts": "npx cypress run"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/orcishbolo/QA-Automation-Challenge.git"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
