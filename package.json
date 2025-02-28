@@ -1,0 +1,40 @@
+{
+  "name": "qa-automation-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --spec cypress/e2e/features/login.feature --reporter cypress-multi-reporters --reporter-options configFile=cypress.config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/step_definitions/*.ts",
+      "html": {
+        "enabled": true,
+        "output": "cypress/reports/cucumber-report.html"
+      }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "cypress": "^14.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-multi-reporters": "^2.0.5",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.4.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "cypress-plugin-xhr-toggle": "^1.2.1"
+  }
+}
