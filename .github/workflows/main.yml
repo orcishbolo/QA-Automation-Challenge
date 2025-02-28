@@ -16,29 +16,6 @@ jobs:
         with:
           start: npm start # Replace with your start command if different
           browser: chrome # Or edge, firefox, electron
-          config: |
-            {
-              "reporter": "cypress-multi-reporters",
-              "reporterOptions": {
-                "reporterEnabled": "mochawesome, cypress-mochawesome-reporter, cypress-junit-reporter, mocha-junit-reporter",
-                "mochaJunitReporterReporterOptions": {
-                  "mochaFile": "cypress/reports/junit/results-[hash].xml",
-                  "toConsole": false
-                },
-                "cypressMochawesomeReporterReporterOptions": {
-                  "charts": true,
-                  "reportPageTitle": "Cypress Mochawesome Report",
-                  "embeddedScreenshots": true,
-                  "inlineAssets": true,
-                  "saveAllAttempts": false,
-                  "overwrite": true
-                },
-                "mochaFile": "cypress/reports/junit/results-[hash].xml"
-              },
-              "cucumberPreprocessor": {
-                "nonGlobalStepDefinitions": true
-              }
-            }
           cucumber: |
             {
               "format": "json:cypress/cucumber-json/cucumber.json",
@@ -53,15 +30,3 @@ jobs:
         with:
           name: cucumber-html-report
           path: cypress/reports/cucumber-report.html
-      - name: Upload Cypress Mochawesome Report
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-mochawesome-report
-          path: cypress/reports/mochawesome.html
-      - name: Upload Junit Report
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-junit-report
-          path: cypress/reports/junit/
